@@ -1,0 +1,132 @@
+📚 Background & Context
+
+Origin: Collected by Harrison & Rubinfeld (1978)
+
+Purpose: Study factors affecting housing prices in Boston-area suburbs
+
+Observations: 506 census tracts
+
+Type: Tabular, fully numeric → perfect for regression & correlation
+
+Target variable: Median home value (MEDV)
+
+It’s widely used in:
+
+Linear & multiple regression
+
+Feature correlation analysis
+
+Model diagnostics and explainability demos
+
+⚠️ Note: While still great for learning, the dataset is considered educational, not suitable for modern policy or fairness analysis.
+
+🧭 Dataset Structure
+
+Each row = one Boston-area census tract
+Each column = a measured attribute of that tract
+
+Column	Description	Units / Meaning
+CRIM	Per capita crime rate	Higher = more crime
+ZN	Proportion of residential land zoned for large lots	% of land
+INDUS	Proportion of non-retail business acres	%
+CHAS	Charles River dummy variable	1 = tract borders river
+NOX	Nitric oxides concentration	Parts per 10 million
+RM	Average number of rooms per dwelling	Continuous
+AGE	Proportion of owner-occupied units built before 1940	%
+DIS	Distance to employment centers	Weighted distance
+RAD	Accessibility to radial highways	Index
+TAX	Property tax rate	Per $10,000
+PTRATIO	Pupil–teacher ratio	Continuous
+B	Proportion of Black residents	See formula below
+LSTAT	% lower status population	Socioeconomic
+MEDV	Median home value	$1000s (target)
+🧮 Important Index Explanations
+🔹 RAD — Highway Accessibility Index
+
+Higher values = closer/more access to major highways
+
+Discrete integer scale
+
+Strongly correlated with TAX and often negatively with MEDV
+
+🔹 DIS — Distance Index
+
+Weighted distance to 5 Boston employment centers
+
+Higher = farther from jobs
+
+Often shows negative correlation with price in urban economics
+
+🔹 B — Racial Index (Historical)
+
+Defined as:
+
+B = 1000 * (Bk − 0.63)²
+
+
+Where Bk = proportion of Black residents
+
+⚠️ This variable is historical and controversial.
+It reflects 1970s modeling assumptions, not modern standards.
+
+👉 Many instructors now:
+
+Exclude it
+
+Use it only to discuss bias in datasets
+
+🔹 LSTAT — Lower Status Population
+
+% of population considered lower socioeconomic status
+
+One of the strongest negative correlations with MEDV
+
+Extremely useful for regression demos
+
+📈 Typical Correlation Patterns
+
+You’ll almost always see:
+
+Strong positive with MEDV
+
+RM (more rooms → higher value)
+
+Strong negative with MEDV
+
+LSTAT
+
+CRIM
+
+NOX
+
+Multicollinearity examples
+
+RAD ↔ TAX
+
+NOX ↔ INDUS
+
+Perfect for:
+
+Correlation heatmaps
+
+Feature selection
+
+Explaining multicollinearity issues
+
+🧪 Why It’s Ideal for Learning Regression
+
+✔ Clean numeric data
+✔ Clear target variable
+✔ Mix of strong & weak correlations
+✔ Real-world interpretability
+✔ Supports simple and multivariate regression
+
+
+⚠️ Ethical & Practical Notes
+
+Contains historical socioeconomic bias
+
+Not recommended for modern policy or fairness-sensitive ML
+
+Excellent for technical learning only
+
